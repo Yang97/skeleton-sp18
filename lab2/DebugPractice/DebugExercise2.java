@@ -25,13 +25,12 @@ public class DebugExercise2 {
         /* If you're stepping into this function, click the
            step out button because you're not going to learn anything. */
         int xor, and, temp;
-        and = x & y;
+        and = (x & y) << 1;
         xor = x ^ y;
 
         while (and != 0) {
-            and <<= 1;
             temp = xor ^ and;
-            and &= xor;
+            and = (xor & temp) << 1;
             xor = temp;
         }
         return xor;
